@@ -1,20 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Play | Open source Project by UIdeck</title>
+    <meta charset="utf-8">
+    <title>{{ config('app.name', 'OnVet') }}</title>
 
-    <!--====== Favicon Icon ======-->
-    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/svg" />
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- Titulo -->
+    <meta name="title" content="Onvet">
+    <meta name="description" content="Sytem 2.1">
+
+    <!--====== Icone ======-->
+    <link rel="shortcut icon" href="images/favicon.svg" type="image/svg" />
+
+    <!-- Swiper's CSS -->
+    <link href="{{ asset('css/swiper.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!-- ===== All CSS files ===== -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/animate.css" />
-    <link rel="stylesheet" href="assets/css/lineicons.css" />
-    <link rel="stylesheet" href="assets/css/ud-styles.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/lineicons.css" />
+    <link rel="stylesheet" href="css/ud-styles.css" />
+    <link rel="stylesheet" href="css/login.css" />
 </head>
 
 <body>
@@ -37,7 +53,7 @@
                         <div class="navbar-collapse">
                             <ul id="nav" class="navbar-nav mx-auto">
                                 <li class="nav-item">
-                                    <a class="ud-menu-scroll" href="#home">Inicio</a>
+                                    <a class="ud-menu-scroll" href="/">Inicio</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="ud-menu-scroll" href="#about">Sobre</a>
@@ -68,49 +84,114 @@
     </header>
     <!-- ====== Header Fim ====== -->
 
-    <!-- ====== Banner Start ====== -->
-    <section class="ud-page-banner">
+    <!-- ====== Login Start ====== -->
+    {{-- <section class="ud-login">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="ud-banner-content">
-                        <h1>404 Page</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ====== Banner End ====== -->
+            <div class="ladoa" id="ladoa">
+            <div>
+                    <div class="ud-login-wrapper">
+                        <div class="ud-login-logo">
+                            <img src="images/logo/logo-2.svg" alt="logo" />
+                        </div>
+                        <form class="ud-login-form">
+                            <div class="ud-form-group">
+                                <input type="email" name="email" placeholder="Email/username" />
+                            </div>
+                            <div class="ud-form-group">
+                                <input type="password" name="password" placeholder="*********" />
+                            </div>
+                            <div class="ud-form-group">
+                                <button type="submit" class="ud-main-btn w-100">Entrar</button>
+                            </div>
+                        </form>
 
-    <!-- ====== Error 404 Start ====== -->
-    <section class="ud-404">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="ud-404-wrapper">
-                        <div class="ud-404-content">
-                            <h2 class="ud-404-title">404 - Não conseguimos encontrar essa página.</h2>
-                            <h5 class="ud-404-subtitle">
-                                Talvez você possa encontrar o que precisa aqui?
-                            </h5>
-                            <ul class="ud-404-links">
+                        <div class="ud-socials-connect">
+                            <p>Connect usando</p>
+                            <ul>
                                 <li>
-                                    <a href="/">Inicio</a>
-                                </li>
-                                <li>
-                                    <a href="/contato">Contato</a>
-                                </li>
-                                <li>
-                                    <a href="/suporte">Suporte</a>
+                                    <a href="javascript:void(0)" class="google">
+                                        <i class="lni lni-google"></i>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
+
+                        <a class="forget-pass" href="javascript:void(0)">
+                            Esqueceu a senha ?
+                        </a>
+                        <p class="signup-option">
+                            Cadastrar-se? <a href="javascript:void(0)"> Cadastrar </a>
+                        </p>
                     </div>
+                </div>
+            </div>
+            <div class="ladob " id="ladob">
+                <img id="img" src="images\fundo\fundo.svg" alt="fundo">
+            </div>
+        </div>
+  
+    </section> --}}
+    <section class="vh-100">
+        <div class="container-fluid h-custom loginN">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                    <form>
+                        <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+                            <div id="esp">
+                                <h1>
+                                    Bem vindo <br>
+                                    <span id="azul">On</span>Vet
+                                </h1>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="form3Example3">Usuario</label>
+                            <input type="email" id="form3Example3" class="form-control form-control-lg"
+                                placeholder="Usuario" />
+                        </div>
+
+                        <!-- Password input -->
+                        <div class="form-outline mb-3">
+                            <label class="form-label" for="form3Example4">Senha</label>
+                            <input type="password" id="form3Example4" class="form-control form-control-lg"
+                                placeholder="Senha" />
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <!-- Checkbox -->
+                            <div class="form-check mb-0">
+                                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                                <label class="form-check-label" for="form2Example3">
+                                    Lembrar-me
+                                </label>
+                            </div>
+                            <a href="#!" class="text-body">Esqueceu a senha?</a>
+                        </div>
+
+                        <div class="text-center text-lg-start mt-4 pt-2">
+                            <button type="button" class="btn btn-primary btn-lg"
+                                style="padding-left: 2.5rem; padding-right: 2.5rem;">Entrar</button>
+                            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
+                                    class="link-danger">Cadastrar-se</a></p>
+                        </div>
+                        <div class="final">
+
+                        </div>
+
+                    </form>
+                </div>
+                <div class="col-md-9 col-lg-6 col-xl-4">
+                    <img src="images\fundo\fundo.svg" class="img-fluid" alt="Logo" style="width: 100%">
                 </div>
             </div>
         </div>
     </section>
-    <!-- ====== Error 404 End ====== -->
+
+    <!-- ====== Login End ====== -->
 
     <!-- ====== Footer Start ====== -->
     <footer class="ud-footer wow fadeInUp" data-wow-delay=".15s">
@@ -155,7 +236,7 @@
                         <div class="ud-widget">
                             <ul class="ud-widget-links">
                                 <li>
-                                    <a href="/">Inicio</a>
+                                    <a href="#home">Inicio</a>
                                 </li>
                                 <li>
                                     <a href="#about">Sobre</a>
@@ -200,7 +281,7 @@
     <!-- ====== Footer End ====== -->
 
     <!-- ====== Back To Top Start ====== -->
-    <a href="/" class="back-to-top">
+    <a href="javascript:void(0)" class="back-to-top">
         <i class="lni lni-chevron-up"> </i>
     </a>
     <!-- ====== Back To Top End ====== -->

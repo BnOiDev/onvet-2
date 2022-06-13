@@ -17,8 +17,12 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/teste', function () {
+    return view('teste');
+});
+
 Route::get('/loginNovo', function () {
-    return view('loginNovo');
+    return view('login');
 });
 
 Route::get('/error', function () {
