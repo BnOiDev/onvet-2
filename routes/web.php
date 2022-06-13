@@ -21,6 +21,18 @@ Route::get('/loginNovo', function () {
     return view('loginNovo');
 });
 
+Route::get('/error', function () {
+    return view('error.erro');
+});
+
+Route::get('/contato', function () {
+    return view('error.erro');
+});
+
+Route::get('/suporte', function () {
+    return view('error.erro');
+});
+
 
 Auth::routes();
 
